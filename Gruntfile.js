@@ -1,4 +1,3 @@
-/*global module:false*/
 module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
@@ -76,19 +75,22 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             }
         },
-		mustache: {
-			pages: {
-				src: '../../content/templates/*.mustache',
-				dest: '../../deploy/FILE.html',
-				options: {
-					production: false,                            // Production filter renders markup inside {{#production}} tags
-					layout: '../../content/templates/layout/layout.mustache',  // Wrap layout around docs pages and convert to HTML
-					paths: {
-						partials: '../../content/templates/partials/**/*.mustache' // Mustache partials that may be used in pages
-					}
-				}
-			}
-		},
+		templates: {
+	      components: {
+	        options: {
+	          engine: "handlebars",
+	          language: "en-us",
+	          flatten: false,
+	          production: false,
+	          layout: 'templates/layout.mustache',
+	          partials: 'templates/partials/**/*.mustache',
+	          data: ['templates/data.json', 'templates/partials/**/*.json']
+	        },
+	        files: {
+	          'html/': ['templates/pages/**/*.mustache']
+	        }
+	      }
+	    },
         uglify: {}
     });
 
