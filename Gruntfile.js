@@ -76,7 +76,7 @@ module.exports = function (grunt) {
             }
         },
 		templates: {
-	      components: {
+	      dev: {
 	        options: {
 	          engine: "handlebars",
 	          language: "en-us",
@@ -84,10 +84,10 @@ module.exports = function (grunt) {
 	          production: false,
 	          layout: 'templates/layout.mustache',
 	          partials: 'templates/partials/**/*.mustache',
-	          data: ['templates/data.json', 'templates/partials/**/*.json']
+	          data: ['templates/data/**/*.json']
 	        },
 	        files: {
-	          'html/': ['templates/pages/**/*.mustache']
+	          'deploy/': ['templates/pages/**/*.mustache']
 	        }
 	      }
 	    },

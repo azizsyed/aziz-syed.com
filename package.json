@@ -14,7 +14,8 @@
     "grunt-jasmine-task": "~0.2.3",
     "bower": "~0.6.8",
     "grunt-templates": "~0.1.0",
-    "handlebars": "~1.0.8"
+    "handlebars": "~1.0.8",
+    "grunt-lib-contrib": "~0.5.2"
   },
   "devDependencies": {},
   "scripts": {

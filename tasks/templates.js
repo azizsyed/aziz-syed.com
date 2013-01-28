@@ -43,22 +43,25 @@ module.exports = function(grunt) {
 
     // validate that the source object exists
     // and there are files at the source.
-    if(!this.file.src) {
+    if(!this.files[0].src) {
       grunt.warn('Missing src property.');
       return false;
     }
-    if(this.file.src.length === 0) {
+    if(this.files[0].src.length === 0) {
       grunt.warn('Source files not found.');
       return false;
     }
-    var src = file.expandFiles(this.file.src);
+
+	console.log("SRC: " + this.files[0].src.length);
+
+    var src = file.expand(this.files[0].src);
 
     // validate that the dest object exists
-    if(!this.file.dest || this.file.dest.length === 0) {
+    if(!this.files[0].dest || this.files[0].dest.length === 0) {
       grunt.warn('Missing dest property.');
       return false;
     }
-    var dest = path.normalize(this.file.dest);
+    var dest = path.normalize(this.files[0].dest);
 
     // find an engine to use
     var engine = data.engine || options.engine || getEngineOf(src);
@@ -74,8 +77,8 @@ module.exports = function(grunt) {
       return false;
     }
 
-    var partials      = file.expandFiles(options.partials);
-    var dataFiles     = file.expandFiles(options.data);
+    var partials      = file.expand(options.partials);
+    var dataFiles     = file.expand(options.data);
     var fileExt       = extension(src);
     var filenameRegex = /[^\\\/:*?"<>|\r\n]+$/i;
     var fileExtRegex  = new RegExp("\." + fileExt + "$");
@@ -144,7 +147,8 @@ module.exports = function(grunt) {
     // build each page
     log.writeln(('\n' + 'Building pages...').grey);
 
-    var basePath = helpers.findBasePath(src, true);
+    var basePath = src;//helpers.findBasePath(src, true);
+
     src.forEach(function(srcFile) {
       srcFile = path.normalize(srcFile);
       filename = path.basename(srcFile).replace(fileExtRegex,'');
@@ -155,7 +159,11 @@ module.exports = function(grunt) {
       relative = _(relative).strRight(basePath).trim(path.sep);
       relative = relative.replace(/\.\.(\/|\\)/g, '');
 
-      destFile = path.join(dest, relative, filename + '.html');
+	  console.log("Dest: " + dest);
+	  console.log("Relative: " + relative);
+	  console.log("Filename: " + filename);
+
+      destFile = path.join(dest, filename + '.html');
 
       log.writeln(('\t' + 'Src: ' + srcFile));
       log.writeln(('\t' + 'Dest: ' + destFile));
