@@ -1,0 +1,32 @@
+{
+    "default": {
+        "modifier": "",
+        "heading": "Default",
+        "strong": "Default Alert!",
+        "message": "Best check yo self, you're not looking too good."
+    },
+    "warning": {
+        "modifier": " alert-warning",
+        "heading": "Warning",
+        "strong": "Warning!",
+        "message": "Best check yo self, you're not looking too good."
+    },
+    "error": {
+        "modifier": " alert-error",
+        "heading": "Error",
+        "strong": "Oh Snap!",
+        "message": "Change a few things up and try submitting again."
+    },
+    "success": {
+        "modifier": " alert-success",
+        "heading": "Success",
+        "strong": "Well Done!",
+        "message": "You successfully read this important alert message."
+    },
+    "info": {
+        "modifier": " alert-info",
+        "heading": "Information",
+        "strong": "Heads Up!",
+        "message": "This alert needs your attention, but it's not super important."
+    }
+}

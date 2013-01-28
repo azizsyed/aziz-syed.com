@@ -1,0 +1,25 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "sub": true,
+    "undef": true,
+    "boss": true,
+    "eqnull": true,
+    "browser": true,
+    "debug": true,
+    "unused": true,
+    "trailing": true,
+    "maxparams": 1,
+    "maxstatements": 10,
+    "maxdepth": 3,
+    "globals": {
+        "jQuery": true,
+        "$": true,
+        "alert": true,
+        "console": true
+    }
+}

@@ -1,0 +1,65 @@
+{
+	"page_title": "WWF",
+	"custom_css" : "wwf.css",
+	"custom_js" : "",
+	"header" : {
+		
+	},
+	"body" : [
+		{
+			"is_alert" : true,
+			"message" : "Please check your settings!"
+		},
+		{
+			"is_3_column" : true,
+			"columns" : [
+				{
+					"heading" : "Heading 1",
+					"description" : "1. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
+					"button" : {
+						"label" : "View details 1",
+						"href" : "##"
+					}
+				},
+				{
+					"heading" : "Heading 2",
+					"description" : "2. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
+					"button" : {
+						"label" : "View details 2",
+						"href" : "##"
+					}
+				},
+				{
+					"heading" : "Heading 3",
+					"description" : "3. Donec sed odio dui. <strong>Etiam</strong> porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
+					"button" : {
+						"label" : "View details 3",
+						"href" : "##"
+					}
+				}
+			]
+		},
+		{
+			"is_video" : true,
+			"poster" : "http://video-js.zencoder.com/oceans-clip.png",
+			"captions" : "captions.vtt",
+			"formats" : [
+				{
+					"type" : "mp4",
+					"source" : "http://video-js.zencoder.com/oceans-clip.mp4"
+				},
+				{
+					"type" : "webm",
+					"source" : "http://video-js.zencoder.com/oceans-clip.webm"
+				},
+				{
+					"type" : "ogg",
+					"source" : "http://video-js.zencoder.com/oceans-clip.ogv"
+				}
+			]
+		}
+	],
+	"footer" : {
+		
+	}	
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Shared Components",
+    "version": "0.0.1",
+    "dependencies": {
+        "jquery": "*",
+        "bootstrap-sass": "*",
+        "labjs": "*",
+		"json2": "*"
+    },
+    "exportsOverride": {
+        "bootstrap-sass": {
+            "scripts/lib": "js/*.js",
+            "css/scss": "lib/*.scss",
+            "images": "img/*.png"
+        },
+        "labjs": {
+            "scripts/lib": "LAB.min.js"
+        },
+	    "jquery": {
+            "scripts/lib": "jquery.min.js"
+        },
+	    "json2": {
+	        "scripts/lib": "*.js"
+	    }
+    }
+}
