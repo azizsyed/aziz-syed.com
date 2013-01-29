@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         bower: {
             install: {
                 options: {
-                    targetDir: './deploy/assets',
+                    targetDir: './',
                     cleanup: false,
                     install: true
                 }
@@ -48,18 +48,20 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            'dev-bootstrap': {
-                src: 'deploy/assets/css/scss/bootstrap-sass',
-                dest: 'deploy/assets/css/output/bootstrap-sass',
+            all: {
+                src: 'scss',
+                dest: 'deploy/assets/css/lib',
                 outputstyle: 'expanded',
                 linecomments: true
             },
             dev: {
-                src: 'deploy/assets/css/scss',
-                dest: 'deploy/assets/css/output',
+                src: 'scss/aziz-syed.com',
+                dest: 'deploy/assets/css',
                 outputstyle: 'expanded',
                 linecomments: true
             }
+            /*
+			TODO: Add build for libs (bootstrap, etc...),
             /*,
             prod: {
                 src: 'development/styles/sass',

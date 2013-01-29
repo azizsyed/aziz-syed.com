@@ -1,26 +1,45 @@
 {
-    "name": "Shared Components",
-    "version": "0.0.1",
-    "dependencies": {
-        "jquery": "*",
-        "bootstrap-sass": "*",
-        "labjs": "*",
-		"json2": "*"
+  "name": "Shared Components",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap-sass": "*",
+    "json2": "*",
+    "font-awesome": "~3.0.2",
+    "flexslider": "latest",
+    "requirejs": "~2.1.4",
+    "modernizr": "~2.6.2"
+  },
+  "exportsOverride": {
+    "bootstrap-sass": {
+      "deploy/assets/scripts/lib": "js/*.js",
+      "scss": "lib/*.scss",
+      "deploy/assets/images": "img/*.*"
     },
-    "exportsOverride": {
-        "bootstrap-sass": {
-            "scripts/lib": "js/*.js",
-            "css/scss": "lib/*.scss",
-            "images": "img/*.png"
-        },
-        "labjs": {
-            "scripts/lib": "LAB.min.js"
-        },
-	    "jquery": {
-            "scripts/lib": "jquery.min.js"
-        },
-	    "json2": {
-	        "scripts/lib": "*.js"
-	    }
+    "labjs": {
+      "deploy/assets/scripts/lib": "LAB.min.js"
+    },
+    "jquery": {
+      "deploy/assets/scripts/lib": "jquery.min.js"
+    },
+    "json2": {
+      "deploy/assets/scripts/lib": "json2.js"
+    },
+    "flexslider": {
+      "deploy/assets/scripts/lib": "jquery.flexslider-min.js",
+      "deploy/assets/images": "images/*.*",
+      "deploy/assets/css/lib": "flexslider.css"
+    },
+    "font-awesome": {
+      "deploy/assets/scripts/lib": "jquery.flexslider-min.js",
+      "deploy/assets/fonts": "font/*.*",
+      "scss": "sass/*.scss"
+    },
+    "requirejs": {
+      "deploy/assets/scripts/lib": "require.js"
+    },
+    "modernizr": {
+      "deploy/assets/scripts/lib": "modernizr.js"
     }
+  }
 }
