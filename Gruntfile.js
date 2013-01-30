@@ -117,8 +117,8 @@ module.exports = function (grunt) {
     //Load task config files; from the 'tasks' subfolder
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('compass-dev', ['compass:dev-bootstrap', 'compass:dev']);
-    grunt.registerTask('build', ['bower:install', 'compass-dev', 'templates']);
+    grunt.registerTask('compass-dev', ['compass:dev']);
+    grunt.registerTask('build', ['bower:install', 'compass:all', 'templates']);
 
     // Default task.
     grunt.registerTask('default', ['jshint', 'compass-dev']);
