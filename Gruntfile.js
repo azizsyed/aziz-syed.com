@@ -1,9 +1,20 @@
 module.exports = function (grunt) {
+    var loadNpmTasks = function () {
+        grunt.loadNpmTasks('grunt-compass');
+        grunt.loadNpmTasks('grunt-contrib-jshint');
+        grunt.loadNpmTasks('grunt-contrib-watch');
+        grunt.loadNpmTasks('grunt-contrib-concat');
+        grunt.loadNpmTasks('grunt-contrib-jasmine');
+        grunt.loadNpmTasks('grunt-bower-task');
+    };
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         meta: {
-            banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
+            banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */',
+            src: 'deploy/assets/scripts/modules/*.js',
+            specs: 'test/specs/**/*.js'
         },
         concat: {
             dist: {
@@ -41,12 +52,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        jasmine: {
-            all: {
-                src: ['tests/SpecRunner.html'],
-                errorReporting: true
-            }
-        },
         compass: {
             all: {
                 src: 'scss',
@@ -77,37 +82,43 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             }
         },
-		templates: {
-	      dev: {
-	        options: {
-	          engine: "handlebars",
-	          language: "en-us",
-	          flatten: false,
-	          production: false,
-	          layout: 'templates/layout.mustache',
-	          partials: 'templates/partials/**/*.mustache',
-	          data: ['templates/data/**/*.json']
-	        },
-	        files: {
-	          'deploy/': ['templates/pages/**/*.mustache']
-	        }
-	      }
-	    },
+        templates: {
+            dev: {
+                options: {
+                    engine: "handlebars",
+                    language: "en-us",
+                    flatten: false,
+                    production: false,
+                    layout: 'templates/layout.mustache',
+                    partials: 'templates/partials/**/*.mustache',
+                    data: ['templates/data/**/*.json']
+                },
+                files: {
+                    'deploy/': ['templates/pages/**/*.mustache']
+                }
+            }
+        },
+        jasmine: {
+            src: '<%= meta.src %>',
+            options: {
+                specs: '<%= meta.specs %>',
+                vendor: ['deploy/assets/scripts/lib/jquery/*.js'],
+                junit: {
+                    path: 'test/junit',
+                    consolidate: true
+                }
+            }
+        },
         uglify: {}
     });
 
-    grunt.loadNpmTasks('grunt-compass');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    //grunt.loadNpmTasks('grunt-jasmine-task');
-    grunt.loadNpmTasks('grunt-bower-task');
+    loadNpmTasks();
 
-	//Load task config files; from the 'tasks' subfolder
-	grunt.loadTasks('tasks');
+    //Load task config files; from the 'tasks' subfolder
+    grunt.loadTasks('tasks');
 
     grunt.registerTask('compass-dev', ['compass:dev-bootstrap', 'compass:dev']);
-    grunt.registerTask('build', ['bower:install', 'compass-dev']);
+    grunt.registerTask('build', ['bower:install', 'compass-dev', 'templates']);
 
     // Default task.
     grunt.registerTask('default', ['jshint', 'compass-dev']);
