@@ -1,0 +1,27 @@
+#!/bin/sh
+
+#INVALIDKEYWORDS="debugger\|alert"
+RESULT=0
+
+#VAR=$(git diff --cached | grep -w "$INVALIDKEYWORDS")
+#if [ ! -z "$VAR" ]; then
+#  RESULT=1
+#fi
+
+#If the invalid keyword check is successful, run the unit tests next
+if [ $RESULT -eq 0 ]; 
+then
+	npm test > info.log
+	RESULT=$?
+	
+	if [ $RESULT -eq 1 ]; 
+	then
+		echo "Unit test(s) failed. Please resolve."
+	fi 
+	
+	rm info.log
+else
+	echo "Invalid keywords exist ($INVALIDKEYWORDS). Please remove."
+fi
+
+exit $RESULT

@@ -19,7 +19,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "grunt jasmine"
+    "test": "grunt jasmine",
+    "install": "./install.sh"
   },
   "repository": {
     "type": "git",
