@@ -122,7 +122,7 @@ module.exports = function (grunt) {
     loadNpmTasks();
 
     //Load task config files; from the 'tasks' subfolder
-    grunt.loadTasks('tasks');
+    grunt.loadTasks('build/tasks');
 
     grunt.registerTask('lint', ['jshint']);
     grunt.registerTask('compass-dev', ['compass:dev']);
