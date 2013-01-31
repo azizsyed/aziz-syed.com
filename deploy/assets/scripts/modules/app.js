@@ -1,4 +1,6 @@
-var Application = function(){
+var Application;
+
+Application = function(){
 	var self = this;
 	
 	self.testMethod = function(){
