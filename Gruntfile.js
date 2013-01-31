@@ -136,10 +136,11 @@ module.exports = function (grunt) {
     //Load task config files; from the 'tasks' subfolder
     grunt.loadTasks('tasks');
 
+    grunt.registerTask('lint', ['jshint']);
     grunt.registerTask('compass-dev', ['compass:dev']);
     grunt.registerTask('build', ['bower:install', 'compass:all', 'templates']);
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'compass-dev', 'templates']);
+    grunt.registerTask('default', ['lint', 'compass-dev', 'templates']);
     grunt.registerTask('test', ['jasmine']);
 };

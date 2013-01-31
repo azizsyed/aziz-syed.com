@@ -7,7 +7,7 @@ PATH=$PATH:/usr/local/bin:/usr/local/sbin
 RESULT=0
 
 #Run JSLINT
-grunt jshint
+grunt lint
 RESULT=$?
 
 #if JSLINT fails, do NOT run unit tests
