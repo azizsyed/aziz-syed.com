@@ -78,7 +78,7 @@ module.exports = function (grunt) {
             }*/
         },
         jshint: {
-            all: ['Gruntfile.js', 'deploy/assets/scripts/*.js'],
+            all: ['Gruntfile.js', 'deploy/assets/scripts/*.js', 'deploy/assets/scripts/modules/**/*.js'],
             options: {
                 jshintrc: '.jshintrc'
             }
@@ -140,5 +140,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['bower:install', 'compass:all', 'templates']);
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'compass-dev']);
+    grunt.registerTask('default', ['jshint', 'compass-dev', 'templates']);
+    grunt.registerTask('test', ['jasmine']);
 };

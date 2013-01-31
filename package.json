@@ -21,7 +21,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "grunt jasmine",
+    "test": "grunt test",
     "install": "./install.sh"
   },
   "repository": {
