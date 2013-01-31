@@ -8,6 +8,5 @@ var SampleApplication = (function () {
     };
     return SampleApplication;
 })();
-
 var sampleApplication = new SampleApplication();
 sampleApplication.testMethod('sample', 4);

@@ -13,7 +13,7 @@
   "exportsOverride": {
     "bootstrap-sass": {
       "deploy/assets/scripts/lib": "js/*.js",
-      "scss": "lib/*.scss",
+      "workspace/scss": "lib/*.scss",
       "deploy/assets/images": "img/*.*"
     },
     "labjs": {
@@ -33,7 +33,7 @@
     "font-awesome": {
       "deploy/assets/scripts/lib": "jquery.flexslider-min.js",
       "deploy/assets/fonts": "font/*.*",
-      "scss": "sass/*.scss"
+      "workspace/scss": "sass/*.scss"
     },
     "labjs": {
       "deploy/assets/scripts/lib": "LAB.min.js"

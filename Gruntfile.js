@@ -15,19 +15,7 @@ module.exports = function (grunt) {
         meta: {
             banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */',
             src: 'deploy/assets/scripts/modules/*.js',
-            specs: 'test/specs/**/*.js'
-        },
-        concat: {
-            dist: {
-                src: ['<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>'],
-                dest: 'dist/<%= pkg.name %>.js'
-            }
-        },
-        min: {
-            dist: {
-                src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-                dest: 'dist/<%= pkg.name %>.min.js'
-            }
+            specs: 'workspace/test/specs/**/*.js'
         },
         watch: {
             jshint: {
@@ -55,13 +43,13 @@ module.exports = function (grunt) {
         },
         compass: {
             all: {
-                src: 'scss',
+                src: 'workspace/scss',
                 dest: 'deploy/assets/css/lib',
                 outputstyle: 'expanded',
                 linecomments: true
             },
             dev: {
-                src: 'scss/aziz-syed.com',
+                src: 'workspace/scss/aziz-syed.com',
                 dest: 'deploy/assets/css',
                 outputstyle: 'expanded',
                 linecomments: true
@@ -90,12 +78,12 @@ module.exports = function (grunt) {
                     language: "en-us",
                     flatten: false,
                     production: false,
-                    layout: 'templates/layout.mustache',
-                    partials: 'templates/partials/**/*.mustache',
-                    data: ['templates/data/**/*.json']
+                    layout: 'workspace/templates/layout.mustache',
+                    partials: 'workspace/templates/partials/**/*.mustache',
+                    data: ['workspace/templates/data/**/*.json']
                 },
                 files: {
-                    'deploy/': ['templates/pages/**/*.mustache']
+                    'deploy/': ['workspace/templates/pages/**/*.mustache']
                 }
             }
         },
@@ -105,7 +93,7 @@ module.exports = function (grunt) {
                 specs: '<%= meta.specs %>',
                 vendor: ['deploy/assets/scripts/lib/jquery/*.js'],
                 junit: {
-                    path: 'test/junit',
+                    path: 'workspace/test/junit',
                     consolidate: true
                 }
             }
@@ -113,7 +101,7 @@ module.exports = function (grunt) {
         type: {
             compile: {
                 files: {
-                    'deploy/assets/scripts/modules/sample.js': ['scripts/sample.ts']
+                    'deploy/assets/scripts/modules/sample.js': ['workspace/scripts/sample.ts']
                 },
                 options: {
                     basePath: 'test',
