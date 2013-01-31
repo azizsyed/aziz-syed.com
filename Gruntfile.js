@@ -6,6 +6,7 @@ module.exports = function (grunt) {
         grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.loadNpmTasks('grunt-contrib-jasmine');
         grunt.loadNpmTasks('grunt-bower-task');
+        grunt.loadNpmTasks('grunt-type');
     };
 
     // Project configuration.
@@ -107,6 +108,24 @@ module.exports = function (grunt) {
                     path: 'test/junit',
                     consolidate: true
                 }
+            }
+        },
+        type: {
+            compile: {
+                files: {
+                    'deploy/assets/scripts/modules/sample.js': ['scripts/sample.ts']
+                },
+                options: {
+                    basePath: 'test',
+                    target: 'ES5'
+                }
+            },
+            options: {
+	            //basePath: 'test'
+                module: 'amd',
+                comments: false,
+                style: 'eqeqeq;bitwise',
+noresolve : true
             }
         },
         uglify: {}
