@@ -5,3 +5,4 @@
 /npm-debug.log
 /workspace/test/junit/
 /build/components/
+/deploy/*.html
