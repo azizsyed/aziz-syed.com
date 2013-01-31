@@ -121,11 +121,11 @@ module.exports = function (grunt) {
                 }
             },
             options: {
-	            //basePath: 'test'
+                //basePath: 'test'
                 module: 'amd',
                 comments: false,
                 style: 'eqeqeq;bitwise',
-noresolve : true
+                noresolve : true
             }
         },
         uglify: {}
