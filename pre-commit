@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#Update the path so that "NPM" will work
+TEMPPATH=$PATH
+PATH=$PATH:/usr/local/bin:/usr/local/sbin
+
+RESULT=0
+
+#Execute the unit test script
+npm test
+RESULT=$?
+
+#Rest the path
+PATH=$TEMPPATH
+
+#Return the exit code status
+exit $RESULT
+
+# The check below verifies if any invalid keyworks exist
+#INVALIDKEYWORDS="debugger\|alert"
+#VAR=$(git diff --cached | grep -w "$INVALIDKEYWORDS")
+#if [ ! -z "$VAR" ]; then
+#  RESULT=1
+#fi
