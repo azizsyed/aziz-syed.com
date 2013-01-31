@@ -7,6 +7,6 @@ describe("Sample", function() {
   });
 
   it("should be equal to 1", function() {
-    expect(sample).toEqual(0);
+    expect(sample).toEqual(1);
   });
 });
