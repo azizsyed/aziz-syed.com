@@ -13,7 +13,7 @@
     "debug": true,
     "unused": true,
     "trailing": true,
-    "maxparams": 1,
+    "maxparams": 2,
     "maxstatements": 10,
     "maxdepth": 3,
     "globals": {
@@ -25,6 +25,7 @@
         "module": true,
         "exports": true,
         "define": true,
-        "$LAB": true
+        "$LAB": true,
+        "Application": true
     }
 }
