@@ -6,6 +6,18 @@ PATH=$PATH:/usr/local/bin:/usr/local/sbin
 
 RESULT=0
 
+#Run JSLINT
+grunt jshint
+RESULT=$?
+
+#if JSLINT fails, do NOT run unit tests
+if [ $RESULT -eq 0 ]
+then
+	echo "JSLINT SUCCESS"
+else
+	exit 1
+fi
+
 #Execute the unit test script
 npm test
 RESULT=$?
