@@ -22,7 +22,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "grunt test",
-    "install": "./install.sh"
+    "install": "./build/install.sh"
   },
   "repository": {
     "type": "git",
