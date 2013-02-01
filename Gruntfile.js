@@ -39,28 +39,18 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            all: {
-                src: 'workspace/scss',
-                dest: 'deploy/assets/css/lib',
-                outputstyle: 'expanded',
-                linecomments: true
-            },
             dev: {
-                src: 'workspace/scss/aziz-syed.com',
+                src: 'workspace/scss/project',
                 dest: 'deploy/assets/css',
                 outputstyle: 'expanded',
                 linecomments: true
+            },
+            lib: {
+                src: 'workspace/scss/lib',
+                dest: 'deploy/assets/lib',
+                outputstyle: 'expanded',
+                linecomments: true
             }
-            /*
-			TODO: Add build for libs (bootstrap, etc...),
-            /*,
-            prod: {
-                src: 'development/styles/sass',
-                dest: 'development/styles',
-                outputstyle: 'compressed',
-                linecomments: false,
-                forcecompile: true
-            }*/
         },
         jshint: {
             all: ['Gruntfile.js', 'deploy/assets/scripts/*.js', 'deploy/assets/scripts/modules/**/*.js'],
@@ -160,11 +150,10 @@ module.exports = function (grunt) {
     grunt.loadTasks('build/tasks');
 
     grunt.registerTask('lint', ['jshint']);
-    grunt.registerTask('compass-dev', ['compass:dev']);
-    grunt.registerTask('build', ['bower:install', 'compass:all', 'templates', 'typescript']);
+    grunt.registerTask('build', ['bower:install', 'compass', 'templates', 'typescript']);
 
     // Default task.
-    grunt.registerTask('default', ['lint', 'compass-dev', 'templates']);
+    grunt.registerTask('default', ['lint', 'compass:dev', 'templates']);
     grunt.registerTask('test', ['jasmine']);
     grunt.registerTask('test-full', ['jasmine', 'casper']);
 };
