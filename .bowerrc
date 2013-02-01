@@ -1,4 +1,4 @@
 {
-  "directory" : "build/components",
+  "directory" : "components",
   "json"      : "component.json"
 }
