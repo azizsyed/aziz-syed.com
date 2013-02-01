@@ -12,9 +12,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         meta: {
-            banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */',
-            src: 'deploy/assets/scripts/modules/*.js',
-            specs: 'workspace/test/specs/**/*.js'
+            banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %>\n' + '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' + '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' + ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
         },
         watch: {
             jshint: {
@@ -87,12 +85,12 @@ module.exports = function (grunt) {
             }
         },
         jasmine: {
-            src: '<%= meta.src %>',
+            src: 'deploy/assets/scripts/modules/*.js',
             options: {
-                specs: '<%= meta.specs %>',
+                specs: 'workspace/test/jasmine/specs/**/*.js',
                 vendor: ['deploy/assets/scripts/lib/jquery/*.js'],
                 junit: {
-                    path: 'workspace/test/junit',
+                    path: 'workspace/test/jasmine/junit',
                     consolidate: true
                 }
             }
@@ -112,7 +110,7 @@ module.exports = function (grunt) {
         },
         casper: {
             dist: {
-                src: ['workspace/casper/*.js'],
+                src: ['workspace/test/casper/*.js'],
 
                 // CasperJS test command options
                 options: {
@@ -123,10 +121,10 @@ module.exports = function (grunt) {
                     */
                     args: {
                         //username: 'colin'
-                        basePath: 'workspace/casper/'
+                        basePath: 'workspace/test/casper/'
                     },
                     // Exports results of test to a xUnit XML file
-                    xunit: 'workspace/casper/xunit/userSuite.xml',
+                    //xunit: 'workspace/casper/test/xunit/userSuite.xml',
                     // Outputs additional log messages
                     direct: true,
                     // Sets logging level, check out http://casperjs.org/logging.html

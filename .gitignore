@@ -6,6 +6,7 @@
 /workspace/test/junit/
 /build/components/
 /deploy/*.html
-/workspace/casper/screenshots/
-/workspace/casper/xunit/
-/workspace/test/junit/
+/workspace/test/casper/screenshots/
+/workspace/test/casper/xunit/
+/workspace/test/test/junit/
+/workspace/test/jasmine/junit/
