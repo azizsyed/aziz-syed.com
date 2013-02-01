@@ -1,12 +1,22 @@
-var SampleApplication = (function () {
-    function SampleApplication() {
-    }
-    SampleApplication.prototype.testMethod = function (sample, tbd) {
-        this.greeting = sample;
-        this.tbd = tbd;
-        return sample;
-    };
-    return SampleApplication;
-})();
-var sampleApplication = new SampleApplication();
-sampleApplication.testMethod('sample', 4);
+var ProjectNameSpace;
+(function (ProjectNameSpace) {
+    (function (Forms) {
+        var SearchForm = (function () {
+            function SearchForm(form) {
+                this.form = form;
+                this.addEvents();
+            }
+            SearchForm.prototype.addEvents = function () {
+                $(this.form).on("submit", this.validate);
+            };
+            SearchForm.prototype.validate = function () {
+                var messageContainer = $("#message-box");
+                messageContainer.text("You entered: " + $("input[type=text]", this.form).val());
+                return false;
+            };
+            return SearchForm;
+        })();
+        Forms.SearchForm = SearchForm;        
+    })(ProjectNameSpace.Forms || (ProjectNameSpace.Forms = {}));
+    var Forms = ProjectNameSpace.Forms;
+})(ProjectNameSpace || (ProjectNameSpace = {}));

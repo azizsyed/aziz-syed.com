@@ -6,7 +6,6 @@ module.exports = function (grunt) {
         grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.loadNpmTasks('grunt-contrib-jasmine');
         grunt.loadNpmTasks('grunt-bower-task');
-        grunt.loadNpmTasks('grunt-type');
     };
 
     // Project configuration.
@@ -98,22 +97,60 @@ module.exports = function (grunt) {
                 }
             }
         },
-        type: {
+        typescript: {
             compile: {
                 files: {
                     'deploy/assets/scripts/modules/sample.js': ['workspace/scripts/sample.ts']
                 },
-                options: {
-                    basePath: 'test',
-                    target: 'ES5'
-                }
+                options: {}
             },
             options: {
                 //basePath: 'test'
-                module: 'amd',
                 comments: false,
-                style: 'eqeqeq;bitwise',
-                noresolve : true
+                noresolve: false
+            }
+        },
+        casper: {
+            dist: {
+                src: ['workspace/casper/*.js'],
+
+                // CasperJS test command options
+                options: {
+                    // Allows you to pass variables to casper that can be accesed in files,
+                    // for example, if you used the following args object then
+                    // casper.cli.get('username') would return 'colin'
+                    /*
+                    */
+                    args: {
+                        //username: 'colin'
+                        basePath: 'workspace/casper/'
+                    },
+                    // Exports results of test to a xUnit XML file
+                    xunit: 'workspace/casper/xunit/userSuite.xml',
+                    // Outputs additional log messages
+                    direct: true,
+                    // Sets logging level, check out http://casperjs.org/logging.html
+                    logLevel: 'info',
+                    // Specifies files to be included for each test file
+                    /*
+                    includes: [
+                        'tests/config.js',
+                        'lib/jquery.min.js'],
+                    // Adds tests from specified files before running the test suite
+                    pre: ['tests/pre-test.js'],
+                    // Adds tests from specified files after running the test suite
+                    post: ['tests/post-test.js'],
+                    */
+                    // Terminates test suite upon failure of first test
+                    failFast: false,
+
+                    // grunt-ghost specific options
+                    // Prints the command given to CasperJS
+                    printCommand: false,
+
+                    // Prints list of filepaths
+                    printFilePaths: true
+                }
             }
         },
         uglify: {}
@@ -126,9 +163,10 @@ module.exports = function (grunt) {
 
     grunt.registerTask('lint', ['jshint']);
     grunt.registerTask('compass-dev', ['compass:dev']);
-    grunt.registerTask('build', ['bower:install', 'compass:all', 'templates']);
+    grunt.registerTask('build', ['bower:install', 'compass:all', 'templates', 'typescript']);
 
     // Default task.
     grunt.registerTask('default', ['lint', 'compass-dev', 'templates']);
     grunt.registerTask('test', ['jasmine']);
+    grunt.registerTask('test-full', ['jasmine', 'casper']);
 };

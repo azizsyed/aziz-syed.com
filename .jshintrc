@@ -11,11 +11,11 @@
     "eqnull": true,
     "browser": true,
     "debug": true,
-    "unused": true,
-    "trailing": true,
+    "trailing": false,
     "maxparams": 2,
     "maxstatements": 10,
     "maxdepth": 3,
+	"supernew": true,
     "globals": {
         "jQuery": true,
         "$": true,
@@ -26,6 +26,7 @@
         "exports": true,
         "define": true,
         "$LAB": true,
-        "Application": true
+        "Application": true,
+		"ProjectNameSpace": true
     }
 }
