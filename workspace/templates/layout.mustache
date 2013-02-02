@@ -1,10 +1,12 @@
 {{>html-start}}
-	<title>{{title}} - {{layoutName}} {{pageName}}</title>
 	{{>head}}
 </head>
 <body>
 	{{>navigation-bar}}
-	{{>body}}
+	<div class="container">
+		{{>body}}
+		<hr />
+	</div>
 	{{>footer}}
 	{{>scripts}}
 {{>html-end}}
