@@ -8,7 +8,7 @@ body{
 	font-family: 'Roboto', sans-serif;
 	
 	h1, h2, h3, h4, h5, h6{
-		font-family: 'Titillium Web', sans-serif;
+		font-family: 'RalewayThin', sans-serif;
 		color: #04a0e0;
 	}
 	
@@ -26,6 +26,51 @@ body{
 		p{
 			font-size: 15px;
 			line-height: 20px;
+		}
+	}
+	
+	.navbar{
+		.links{
+			font-size: 24px;
+			line-height: 100px;
+			float: right;
+			a{
+				text-indent: 10px;
+				
+				&:hover{
+					text-decoration: none;
+					color: $orange;
+				}
+			}
+		}
+		
+		.navbar-divider{
+			display: none;
+		}
+		
+		@media (max-width: 767px){
+			.brand{
+				text-align:center;
+				float: none;
+			}
+			
+			.navbar-divider{
+				display: block;
+				margin: 0px 0px;
+			}
+			
+			.links{
+				font-size: 20px;
+				line-height: 40px;
+				float: none;
+				a{
+					text-indent: 0px;
+					float: left;
+					display: block;
+					text-align: center;
+					width: 20%;
+				}
+			}
 		}
 	}
 }
