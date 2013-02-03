@@ -21,12 +21,16 @@ module.exports = function (grunt) {
                 options: {}
             },
             'compass-dev': {
-                files: ['deploy/assets/css/scss/*.scss'],
+                files: '<%= compass.dev.src %>/**/*.scss',
                 tasks: ['compass:dev']
             },
-            'compass-bootstrap': {
-                files: ['deploy/assets/css/scss/bootstrap-sass/*.scss'],
-                tasks: ['compass:dev-bootstrap']
+            'compass-lib': {
+                files: '<%= compass.lib.src %>/**/*.scss',
+                tasks: ['compass:lib']
+            },
+            'templates': {
+                files: 'workspace/templates/**/*.*',
+                tasks: ['templates']
             }
         },
         bower: {
