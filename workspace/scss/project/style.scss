@@ -10,6 +10,7 @@ body{
 	h1, h2, h3, h4, h5, h6{
 		font-family: 'RalewayThin', sans-serif;
 		color: #04a0e0;
+		font-weight: 100;
 	}
 	
 	.hero-unit{
@@ -20,7 +21,7 @@ body{
 		
 		h1{
 			padding-bottom: 10px;
-			color: #04a0e0;
+			color: $blue;
 		}
 		
 		p{
@@ -30,10 +31,18 @@ body{
 	}
 	
 	.navbar{
+		h1{
+			color: $orange;
+			font-size: 40px;
+			margin: 0px;
+			line-height: 100px;
+		}
+		
 		.links{
 			font-size: 24px;
 			line-height: 100px;
 			float: right;
+			
 			a{
 				text-indent: 10px;
 				
@@ -49,9 +58,10 @@ body{
 		}
 		
 		@media (max-width: 767px){
-			.brand{
+			h1{
 				text-align:center;
 				float: none;
+				line-height: 50px;
 			}
 			
 			.navbar-divider{
