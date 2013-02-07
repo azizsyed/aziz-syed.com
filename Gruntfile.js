@@ -92,9 +92,11 @@ module.exports = function (grunt) {
         typescript: {
             compile: {
                 files: {
-                    'deploy/assets/scripts/modules/sample.js': ['workspace/scripts/sample.ts']
+                    'deploy/assets/scripts': ['workspace/scripts/*.ts', 'workspace/scripts/modules/**/*.ts']
                 },
-                options: {}
+                options: {
+                    baseOutputPath: 'workspace/scripts'
+                }
             },
             options: {
                 //basePath: 'test'
