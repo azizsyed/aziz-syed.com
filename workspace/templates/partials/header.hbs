@@ -1,0 +1,13 @@
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+   {{brand}}
+   <div class="pull-right">
+   	<div class="visible-xs">
+   		<a href="#" title="Menu"><i class="fa fa-bars"></i><span class="sr-only">Menu</span></a>   	   	
+   	</div>
+   	<div class="visible-sm visible-md visible-lg">
+	   	{{#header.links}}
+	   		<a href="{{link}}" title="{{text}}"><i class="fa fa-{{icon}}"></i><span class="sr-only">{{text}}</span></a>
+	   	{{/header.links}}
+   	</div>
+   </div>
+ </nav>

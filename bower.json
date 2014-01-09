@@ -1,0 +1,19 @@
+{
+  "name": "local.aziz-syed.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/azizsyed/aziz-syed.com",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "bootstrap-sass": "~3.0.2",
+    "font-awesome": "~4.0.3"
+  }
+}

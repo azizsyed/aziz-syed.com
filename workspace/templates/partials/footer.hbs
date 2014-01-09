@@ -1,0 +1,10 @@
+<footer>
+	<ul>
+	   	{{#header.links}}
+	   	<li>
+	   		<a href="{{link}}" title="{{text}}"><i class="fa fa-{{icon}}"></i><span class="sr-only">{{text}}</span></a>
+	   	</li>
+	   	{{/header.links}}
+	</ul>
+	<p>&copy; {{brand}} {{moment format="YYYY"}}</p>
+</footer>

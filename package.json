@@ -1,28 +1,27 @@
 {
-  "name": "aziz-syed.com",
-  "version": "0.0.1",
-  "description": "aziz-syed.com",
+  "name": "azizsyed.com",
+  "version": "1.0.0",
+  "description": "azizsyed.com",
   "main": "Gruntfile.js",
-  "dependencies": {
-    "grunt": "~0.4.0rc7",
-    "grunt-bower-task": "~0.1.0",
-    "grunt-compass": "~0.3.8",
-    "grunt-contrib-concat": "~0.1.1",
-    "grunt-contrib-jshint": "~0.1.0",
-    "grunt-contrib-watch": "~0.1.4",
-    "grunt-init": "~0.1.0",
-    "bower": "~0.6.8",
-    "grunt-templates": "~0.1.0",
-    "handlebars": "~1.0.8",
-    "grunt-lib-contrib": "~0.3.1",
-    "grunt-contrib-jasmine": "~0.3.0rc5",
-    "typescript": "~0.8.2",
-    "grunt-ghost": "~0.1.11"
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "handlebars": "~1.3.0",
+    "lodash": "~2.4.1",
+    "assemble": "~0.4.33",
+    "matchdep": "~0.3.0",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-newer": "~0.6.0",
+    "helper-moment": "~0.1.3",
+    "grunt-ftp-deploy": "~0.1.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "grunt test",
-    "install": "./build/install.sh"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
