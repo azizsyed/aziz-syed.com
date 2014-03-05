@@ -18,7 +18,9 @@
     "grunt-contrib-connect": "~0.6.0",
     "grunt-newer": "~0.6.0",
     "helper-moment": "~0.1.3",
-    "grunt-ftp-deploy": "~0.1.1"
+    "grunt-ftp-deploy": "~0.1.1",
+    "assemble-contrib-permalinks": "~0.3.2",
+    "assemble-contrib-sitemap": "~0.1.7"
   },
   "scripts": {
     "test": "grunt test"
@@ -30,5 +32,6 @@
   "author": "Aziz Syed",
   "license": "BSD",
   "readmeFilename": "README.md",
-  "gitHead": "0a1c44acb84f37fa957bf101b9f5cd221d59501d"
+  "gitHead": "0a1c44acb84f37fa957bf101b9f5cd221d59501d",
+  "homepage": "http://azizsyed.com"
 }

@@ -14,6 +14,10 @@ module.exports = function (grunt) {
         tasks: ['jshint'],
         options: {}
       },
+      scripts: {
+        files: 'workspace/scripts/**/*.js',
+        tasks: ['copy:scripts']
+      },
       styles: {
         files: '<%= compass.dev.options.sassDir %>/**/*.scss',
         tasks: ['compass:dev']
@@ -64,7 +68,9 @@ module.exports = function (grunt) {
       server: {
         options: {
           port: 9001,
-          base: 'dist'
+          base: 'dist',
+          keepalive: true,
+          debug: true
         }
       }
     },
@@ -80,7 +86,29 @@ module.exports = function (grunt) {
         src: '**',
         expand: true,
         dest: 'dist/assets/fonts/'
-      }      
+      },
+      scripts: {
+        cwd: 'workspace/scripts',
+        src: '**/*.js',
+        expand: true,
+        dest: 'dist/assets/scripts'        
+      },
+      threejs: {
+        cwd: 'components/threejs/src',
+        src: '**',
+        expand: true,
+        dest: 'dist/assets/scripts/lib/threejs'        
+      },
+      images: {
+        files: [
+          {
+            cwd: 'components/threejs/examples/textures',
+            expand: true,
+            src: ['planets/*.*', 'land_ocean_ice_cloud_2048.jpg'],
+            dest: 'dist/assets/images/textures'
+          }
+        ]
+      }
     },
     clean: {
       dist: ['dist']
@@ -89,6 +117,14 @@ module.exports = function (grunt) {
       options: {
         prettify: {
           indent: 2
+        },
+        plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap'],
+        permalinks: {
+          preset: 'pretty'
+        },
+        sitemap: {
+          changefreq: 'monthly',
+          exclude: ['']
         },
         assets: 'dist/assets',
         partials: ['workspace/templates/partials/**/*.hbs'],
