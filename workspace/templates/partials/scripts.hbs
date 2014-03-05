@@ -1,1 +1,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+{{#scripts.external}}
+<script src="//{{.}}"></script>
+{{/scripts.external}}
+{{#scripts.local}}
+<script src="/assets/scripts/{{.}}"></script>
+{{/scripts.local}}

@@ -1,10 +1,10 @@
 <footer>
-	<ul>
+	<ul class="clearfix">
 	   	{{#header.links}}
 	   	<li>
-	   		<a href="{{link}}" title="{{text}}"><i class="fa fa-{{icon}}"></i><span class="sr-only">{{text}}</span></a>
+	   		<a href="{{link}}" title="{{text}}"><i class="fa fa-{{icon}}"></i><span>{{text}}</span></a>
 	   	</li>
 	   	{{/header.links}}
 	</ul>
-	<p>&copy; {{brand}} {{moment format="YYYY"}}</p>
+	<section class="copyright">&copy; {{brand}} {{moment format="YYYY"}}</section>
 </footer>

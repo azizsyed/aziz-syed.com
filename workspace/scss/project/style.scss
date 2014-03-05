@@ -1,2 +1,25 @@
 @import "vars";
 @import "font";
+@import "mixins";
+@import "media-queries";
+
+@import "site_base";
+
+@media screen and (min-width: 320px)  {
+}
+@media screen and (min-width: 480px)  {
+}
+@media screen and (min-width: 768px)  {
+	@import "site_768";
+}
+@media screen and (min-width: 1024px) {
+	@import "site_1024";
+}
+
+
+canvas#test{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111a22;
+}
