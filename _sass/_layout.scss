@@ -1,0 +1,72 @@
+/**
+ * Site header
+ */
+.site-header {
+}
+
+.site-title {
+}
+
+.site-nav {
+}
+
+
+
+/**
+ * Site footer
+ */
+footer.site-footer {
+  .footer-heading {
+  }
+
+  .contact-list,
+  .social-media-list {
+  }
+}
+
+.footer-col-wrapper {
+  @include outer-container;
+
+  .footer-col{
+    @include span-columns(12);
+
+    @include media($medium-screen-up) {
+      @include span-columns(4);
+    }
+  }
+}
+
+
+/**
+ * Page content
+ */
+.page-content {
+}
+
+.page-heading {
+}
+
+.post-list {
+    > li {
+    }
+}
+
+.post-meta {
+}
+
+.post-link {
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+}
+
+.post-title {
+}
+
+.post-content {
+}

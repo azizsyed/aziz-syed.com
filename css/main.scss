@@ -1,0 +1,23 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  "vendors/colors/colors"
+;
+
+@import "vendors/bourbon/bourbon";
+@import "vendors/base/base";
+@import "grid-settings";
+@import "vendors/neat/neat";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  "variables",
+  "base",
+  "layout",
+  "fonts",
+  "syntax-highlighting"
+;

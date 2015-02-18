@@ -1,0 +1,20 @@
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    <nav class="site-nav">
+
+      <div class="trigger">
+
+        {% for link in site.data.navigation %}
+          <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a>
+        {% endfor %}
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
