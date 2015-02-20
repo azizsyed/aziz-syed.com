@@ -1,0 +1,74 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  "mixins",
+  "vendors/colors/colors"
+;
+
+@import "vendors/bourbon/bourbon";
+@import "vendors/base/base";
+@import "grid-settings";
+@import "vendors/neat/neat";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  "base",
+  "layout",
+  "fonts",
+  "header",
+  "footer",
+  "home",
+  "syntax-highlighting"
+;
+
+body{
+  /*background-image: url('/assets/images/rain_bkg.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;*/
+  min-height: 100vh;
+  @include display(flex);
+  @include flex-direction(column);
+  //@include align-items(stretch);
+  //@include justify-content(flex-start);
+  margin: 0;
+}
+
+.page-content {
+  @include flex(1);
+  @include display(flex);
+}
+
+h1{
+
+  &.post-title{
+    font-size: em(26);
+    font-weight: 100;
+    color: $navy;
+  }
+}
+
+h2{
+
+}
+
+h3{
+
+}
+
+h4{
+
+}
+
+h5{
+
+}
+
+h6{
+
+}

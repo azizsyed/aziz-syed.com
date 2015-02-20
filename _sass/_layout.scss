@@ -1,46 +1,17 @@
 /**
- * Site header
- */
-.site-header {
-}
-
-.site-title {
-}
-
-.site-nav {
-}
-
-
-
-/**
- * Site footer
- */
-footer.site-footer {
-  .footer-heading {
-  }
-
-  .contact-list,
-  .social-media-list {
-  }
-}
-
-.footer-col-wrapper {
-  @include outer-container;
-
-  .footer-col{
-    @include span-columns(12);
-
-    @include media($medium-screen-up) {
-      @include span-columns(4);
-    }
-  }
-}
-
-
-/**
  * Page content
  */
 .page-content {
+  .wrapper{
+    @include outer-container;
+    @include fill-parent();
+    
+    @include padding($small-spacing);
+
+    @include media($medium-screen-up){
+      @include padding($base-spacing);
+    }
+  }
 }
 
 .page-heading {
@@ -69,4 +40,31 @@ footer.site-footer {
 }
 
 .post-content {
+}
+
+
+.post-list{
+  li{
+    @include fill-parent();
+    @include row();
+
+    i{
+      color: $orange;
+    }
+  }
+}
+
+nav.pagination{
+  @include clearfix;
+
+  a{
+    color: $orange;
+    &:hover{
+      color: $red;
+    }
+
+    &.next{
+      float: right;
+    }
+  }
 }

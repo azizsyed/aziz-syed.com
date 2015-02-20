@@ -1,4 +1,4 @@
 ---
 layout: coming_soon
-title: About
+title: Portfolio
 ---

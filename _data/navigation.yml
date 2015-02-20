@@ -1,7 +1,16 @@
 # Site navigation links
 
-- title: About
-  url: /about.html
-
-- title: Blog
+- title: Posts
+  icon: newspaper-o
   url: /posts.html
+
+- title: Projects
+  icon: code
+  url: /projects
+
+#- title: Portfolio
+#  url: /portfolio/
+#
+- title: About
+  icon: user
+  url: /about.html

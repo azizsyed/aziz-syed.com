@@ -2,17 +2,21 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    {% if site.subtitle %}
+    {% endif %}
 
     <nav class="site-nav">
-
-      <div class="trigger">
-
-        {% for link in site.data.navigation %}
-          <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a>
-        {% endfor %}
-
-      </div>
+      <ul class="no-list">
+      {% for link in site.data.navigation %}
+        <li>
+          <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>
+            <i class="fa fa-{{link.icon}}"></i>
+            <span>{{ link.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
     </nav>
 
   </div>

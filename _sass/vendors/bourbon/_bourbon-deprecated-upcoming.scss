@@ -3,7 +3,7 @@
 @mixin inline-block {
   display: inline-block;
 
-  @warn "The inline-block mixin is deprecated and will be removed in the next major version release";
+  //@warn "The inline-block mixin is deprecated and will be removed in the next major version release";
 }
 
 @mixin button ($style: simple, $base-color: #4294f0, $text-size: inherit, $padding: 7px 18px) {
@@ -61,7 +61,7 @@
     opacity: 0.5;
   }
 
-  @warn "The button mixin is deprecated and will be removed in the next major version release";
+  //@warn "The button mixin is deprecated and will be removed in the next major version release";
 }
 
 // Selector Style Button
@@ -381,7 +381,7 @@
   $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
   @return percentage($width / $container-width);
 
-  @warn "The flex-grid function is deprecated and will be removed in the next major version release";
+  //@warn "The flex-grid function is deprecated and will be removed in the next major version release";
 }
 
 // Flexible gutter
@@ -389,23 +389,23 @@
   $container-width: $container-columns * $fg-column + ($container-columns - 1) * $fg-gutter;
   @return percentage($gutter / $container-width);
 
-  @warn "The flex-gutter function is deprecated and will be removed in the next major version release";
+  //@warn "The flex-gutter function is deprecated and will be removed in the next major version release";
 }
 
 @function grid-width($n) {
   @return $n * $gw-column + ($n - 1) * $gw-gutter;
 
-  @warn "The grid-width function is deprecated and will be removed in the next major version release";
+  //@warn "The grid-width function is deprecated and will be removed in the next major version release";
 }
 
 @function golden-ratio($value, $increment) {
   @return modular-scale($increment, $value, $ratio: $golden);
 
-  @warn "The golden-ratio function is deprecated and will be removed in the next major version release. Please use the modular-scale function, instead.";
+  //@warn "The golden-ratio function is deprecated and will be removed in the next major version release. Please use the modular-scale function, instead.";
 }
 
 @mixin box-sizing($box) {
   @include prefixer(box-sizing, $box, webkit moz spec);
 
-  @warn "The box-sizing mixin is deprecated and will be removed in the next major version release. This property can now be used un-prefixed.";
+  //@warn "The box-sizing mixin is deprecated and will be removed in the next major version release. This property can now be used un-prefixed.";
 }

@@ -1,0 +1,8 @@
+<nav class="pagination" role="navigation">
+  {% if page.previous %}
+    <a href="{{ page.previous.url }}" class="btn previous" title="{{ page.previous.title }}"><i class="fa fa-arrow-circle-left"></i> Previous</a>
+  {% endif %}
+  {% if page.next %}
+    <a href="{{ page.next.url }}" class="btn next" title="{{ page.next.title }}">Next <i class="fa fa-arrow-circle-right"></i></a>
+  {% endif %}
+</nav>

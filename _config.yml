@@ -1,16 +1,19 @@
 # Site settings
-title: AzizSyed.com
+title: Aziz Syed
+subtitle: Writings, ramblings, thoughts, ideas of a web developer
 email: aziz.scarn@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Welcome to AzizSyed.com
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://azizsyed.com" # the base hostname & protocol for your site
-#twitter_username: jekyllrb
+twitter_username: zaazoos
 github_username: azizsyed
+
+exclude: ["Guardfile", "bundle exec guardlib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
 # Build settings
 markdown: kramdown
 
 sass:
   sass_dir: _sass
-  style: compressed
+  #style: compressed

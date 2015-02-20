@@ -1,6 +1,6 @@
 // Typography
 $base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$heading-font-family: "pt-sans", serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -16,7 +16,7 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
+//$blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;

@@ -1,0 +1,42 @@
+/**
+ * Site footer
+ */
+.site-footer {
+  text-align: center;
+
+  @include linear-gradient(to bottom, $navy, tint($navy, 25%), $fallback:$blue);
+  
+  color: $white;
+  a{
+    color: $white;
+    &:hover{
+      color: $blue;
+    }
+  }
+
+  .wrapper{
+    @include outer-container;
+  }
+
+  .copyright{
+    font-size: em(10);
+  }
+
+  .icons{
+    @include transition(font 0.25s $ease-in-circ);
+
+    font-size: em(32);
+
+    @include media($medium-screen-up){
+      font-size: em(29);
+    }
+
+    @include media($large-screen-up){
+      font-size: em(26);
+    }
+
+    a{
+      @include margin(null 6px);
+    }
+  }
+}
