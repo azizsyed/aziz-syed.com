@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/azizsyed/azizsyed.com/issues"
   },
-  "homepage": "https://github.com/azizsyed/azizsyed.com"
+  "homepage": "https://github.com/azizsyed/azizsyed.com",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-sftp": "^0.1.4"
+  }
 }

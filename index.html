@@ -4,21 +4,10 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Welcome to my site! Please select an area from below to visit. For any questions, contact me directly!</h1>
+  <h1 class="page-heading">Welcome!</h1>
   
-  Recent posts:
+  <h2>Recent posts:</h2>
 
-  <ul class="no-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
+  {% include posts-list.html limit=site.recent_posts_count %}
 
 </div>

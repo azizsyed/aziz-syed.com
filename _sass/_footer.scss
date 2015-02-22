@@ -2,9 +2,20 @@
  * Site footer
  */
 .site-footer {
-  text-align: center;
 
   @include linear-gradient(to bottom, $navy, tint($navy, 25%), $fallback:$blue);
+
+  text-align: center;
+
+  .wrapper{
+    @include outer-container;
+    
+    @include padding(null $small-spacing);
+
+    @include media($medium-screen-up){
+      @include padding(null $base-spacing);
+    }
+  }
   
   color: $white;
   a{
@@ -12,10 +23,6 @@
     &:hover{
       color: $blue;
     }
-  }
-
-  .wrapper{
-    @include outer-container;
   }
 
   .copyright{

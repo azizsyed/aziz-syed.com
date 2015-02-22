@@ -22,6 +22,7 @@
   "header",
   "footer",
   "home",
+  "posts-list",
   "syntax-highlighting"
 ;
 
@@ -44,31 +45,30 @@ body{
   @include display(flex);
 }
 
-h1{
-
-  &.post-title{
+.page-content{
+  h1{
     font-size: em(26);
-    font-weight: 100;
     color: $navy;
   }
-}
 
-h2{
+  h2{
+    font-size: em(20);
+    color: $navy;
+  }
 
-}
+  h3{
 
-h3{
+  }
 
-}
+  h4{
 
-h4{
+  }
 
-}
+  h5{
 
-h5{
+  }
 
-}
+  h6{
 
-h6{
-
+  }
 }

@@ -2,10 +2,18 @@
  * Site header
  */
 .site-header {
+
   @include linear-gradient(to top, $navy, tint($navy, 25%), $fallback:$navy);
 
   .wrapper{
     @include outer-container;
+    
+    @include padding(null $small-spacing);
+
+    @include media($medium-screen-up){
+      @include padding(null $base-spacing);
+    }
+
     text-align: center;
 
     .site-title{
@@ -13,14 +21,14 @@
       a{
         color: $orange;
         &:hover{
-          color: $aqua;
+          color: $red;
         }
       }
 
       @include transition(font 0.25s $ease-in-circ);
       //@include margin(0);
 
-      font-weight: 100;
+      //font-weight: 100;
       //@include hue-nimate(1s);
       //@include clip(90deg, #feab3a, #feab3a, $white);
 
@@ -29,7 +37,7 @@
       margin: 0;
 
       @include media($medium-screen-up){
-        //font-size: em(40);
+        font-size: em(52);
       }
 
       @include media($large-screen-up){
@@ -39,22 +47,6 @@
 
     .site-title:hover + .site-nav a{
       color: shade($gray, 30%);
-    }
-
-    .site-subtitle{
-      @include transition(color 0.25s $ease-in-circ);
-      color: shade($aqua, 15%);
-      font-size: em(14);
-      font-weight: normal;
-      font-style: italic;
-
-      @include media($medium-screen-up){
-        font-size: em(16);
-      }
-
-      @include media($large-screen-up){
-        font-size: em(18);
-      }
     }
 
     .site-nav{
@@ -86,7 +78,17 @@
 
             @include media($medium-screen-up){
 
-              font-size: em(20);
+              font-size: em(17);
+
+              > i{
+                font-size: inherit;
+                display: inline;
+              }
+            }
+
+            @include media($large-screen-up){
+
+              font-size: em(18);
 
               > i{
                 font-size: inherit;
@@ -100,5 +102,30 @@
       }
     }
 
+  }
+
+  @include media($medium-screen-up){
+    .wrapper{
+
+      .site-title{
+        @include span-columns(8);
+        text-align: left;
+      }
+
+      .site-nav{
+        @include span-columns(4);
+        @include padding(0);
+
+        ul{
+
+          li{
+            @include span-columns(12);
+            text-align: right;
+          }
+
+        }
+      }
+
+    }
   }
 }

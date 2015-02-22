@@ -1,0 +1,51 @@
+.posts-list{
+
+  li{
+
+    margin-bottom: $base-spacing;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    > div{
+      @include clearfix;
+    }
+  }
+
+  li
+
+  .post-title{
+    @include span-columns(8);
+    @include ellipsis();
+
+    font-size: em(18);
+    margin-bottom: 0px;
+  }
+
+  .post-meta{
+    text-align: right;
+    @include span-columns(4);
+    font-size: em(12);
+    color: $gray;
+  }
+
+  .summary{
+    margin-top: $small-spacing/2;
+    text-decoration: italic;
+    font-size: em(13);
+  }
+
+
+  @include media($medium-screen-up){
+
+    .post-title{
+      @include span-columns(12);
+    }
+
+    .post-meta{
+      @include span-columns(12);
+      text-align: left;
+    }
+  }
+}
