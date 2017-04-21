@@ -12,22 +12,130 @@
 
 import React from 'react';
 import anime from 'animejs';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
-// Create an <Input> component that'll render an <input> tag with some styles
-const Polygon = styled.polygon`
-  fill: #FFFFFF;
-  stroke: #000000;
-  strokeMiterlimit: 10;
+const animateRotate360 = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+
+  45% {
+    transform: rotate(360deg);
+  }
+
+  65% {
+    transform: rotate(360deg);
+  }
+
+  90% {
+    transform: rotate(0deg);
+  }
 `;
 
-const Star1 = () => (
-  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80.81px" height="76.854px">
-    <Polygon points="40.405,1.13 52.559,25.756 79.735,29.705 60.07,48.874 64.713,75.94 40.405,63.161 16.098,75.94 20.74,48.874 1.075,29.705 28.252,25.756" />
-  </svg>
-);
+const animateFill = keyframes`
+  0% {
+    fill: #828282;
+    stroke: #000000;
+  }
+
+  20% {
+    fill: #c9c9c9;
+    stroke: #dddddd;
+  }
+
+  40% {
+    fill: #626262;
+    stroke: #222222;
+  }
+
+  60% {
+    fill: #e5e5e5;
+    stroke: #aaaaaa;
+  }
+
+  80% {
+    fill: #353535;
+    stroke: #222222;
+  }
+
+  100% {
+    fill: #828282;
+    stroke: #000000;
+  }
+`;
+
+const Rotate = styled.div`
+  display: inline-block;
+  animation-delay: 3s;
+  animation-direction: alternate;
+  animation: ${animateRotate360} 15s ease-in-out infinite;
+`;
+
+// Create an <Input> component that'll render an <input> tag with some styles
+const Polygon = styled.polygon`
+  fill: #00FF00;
+  stroke: #000000;
+  strokeMiterlimit: 10;
+  animation: ${animateFill} 15s ease-in-out infinite;
+`;
+
+// Create an <Input> component that'll render an <input> tag with some styles
+const TBD = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+`;
+
+class Star1 extends React.PureComponent {
+  componentDidMount() {
+    anime({
+      targets: this.$svg,
+      rotate: {
+        value: 360,
+        // duration: 20000,
+        // delay: 3000,
+        // easing: 'easeInOutSine',
+      },
+      easing: 'easeInOutSine',
+      duration: 5000,
+      direction: 'alternate',
+      loop: true,
+    });
+    anime({
+      targets: this.$svg.getElementsByTagName('polygon'),
+      fill: [
+        { value: 'rgb(255, 0, 0)', duration: 3000 },
+        { value: 'rgb(0, 0, 255)', duration: 1000 },
+        { value: 'rgb(255, 0, 255)' },
+      ],
+      easing: 'easeInOutSine',
+      duration: 5000,
+      direction: 'alternate',
+      loop: true,
+    });
+  }
+
+        // <filter id="blur-filter" x="-2" y="-2" width="81" height="77">
+        //   <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+        // </filter>
+  render() {
+    return (
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="81px" height="77px" ref={(svg) => { this.$svg = svg; }}>
+        <Polygon
+          points="40.405,1.13 52.559,25.756 79.735,29.705 60.07,48.874 64.713,75.94 40.405,63.161 16.098,75.94 20.74,48.874 1.075,29.705 28.252,25.756"
+        />
+      </svg>
+    );
+  }
+}
+
 const Star2 = () => (
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="77.606px" height="77.607px">
     <Polygon points="38.803,1.042 52.154,25.453 76.564,38.803 52.154,52.154 38.803,76.565 25.452,52.154 1.042,38.803 25.452,25.453" />
@@ -45,7 +153,7 @@ const Star4 = () => (
 );
 
 const Sun = () => (
-  <svg version="1.1" id="Sun" xmlns="http://www.w3.org/2000/svg" width="540px" height="540px">
+  <svg version="1.1" id="Sun" xmlns="http://www.w3.org/2000/svg" width="540px" height="540px" style={{ paddingTop: 270 }}>
     <radialGradient id="RG1" cx="270" cy="270" r="270" gradientUnits="userSpaceOnUse">
       <stop
         offset="0"
@@ -212,15 +320,11 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   render() {
     return (
       <div>
-        <h1>
-          <FormattedMessage {...messages.header} />
-        </h1>
         <Star1 />
-        <Star2 />
-        <Star3 />
-        <Star4 />
-        <Hero />
-        <Sun />
+        <Rotate delay={500}><Star2 /></Rotate>
+        <Rotate delay={1000}><Star3 /></Rotate>
+        <Rotate delay={1500}><Star4 /></Rotate>
+        <TBD><Sun /></TBD>
       </div>
     );
   }
