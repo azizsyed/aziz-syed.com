@@ -87,10 +87,9 @@ const Polygon = styled.polygon`
 
 // Create an <Input> component that'll render an <input> tag with some styles
 const TBD = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-  text-align: center;
+  // position: absolute;
+  // width: 100%;
+  // text-align: center;
 `;
 
 class Star1 extends React.PureComponent {
@@ -148,12 +147,28 @@ const Star3 = () => (
 );
 const Star4 = () => (
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="76.486px" height="72.772px">
-    <Polygon points="61.163,71.857 38.205,59.752 15.219,71.802 19.637,46.228 1.074,28.09 26.761,24.39 38.275,1.13 49.733,24.416 75.411,28.178 56.806,46.271" />
+    <filter id="glow">
+        <feGaussianBlur stdDeviation="4.5" result="coloredBlur"/>
+        <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+    <Polygon
+      filter="url(#glow)"
+       points="61.163,71.857 38.205,59.752 15.219,71.802 19.637,46.228 1.074,28.09 26.761,24.39 38.275,1.13 49.733,24.416 75.411,28.178 56.806,46.271" />
   </svg>
 );
 
 const Sun = () => (
-  <svg version="1.1" id="Sun" xmlns="http://www.w3.org/2000/svg" width="540px" height="540px" style={{ paddingTop: 270 }}>
+  <svg
+    version="1.1"
+    id="Sun"
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    style={{ paddingTop: 270 }}
+    viewBox="0 0 540 540"
+  >
     <radialGradient id="RG1" cx="270" cy="270" r="270" gradientUnits="userSpaceOnUse">
       <stop
         offset="0"
@@ -219,23 +234,15 @@ const Sun = () => (
       />
       <stop
         offset="0.5327"
-        style={{ stopColor: '#F3903F' }}
+        style={{ stopColor: '#c95802' }}
       />
       <stop
         offset="0.6918"
         style={{ stopColor: '#ED683C' }}
       />
       <stop
-        offset="0.7813"
-        style={{ stopColor: '#EB583B', stopOpacity: 0.6892 }}
-      />
-      <stop
-        offset="0.8983"
-        style={{ stopColor: '#E9453A', stopOpacity: 0.2834 }}
-      />
-      <stop
         offset="0.98"
-        style={{ stopColor: '#E93E3A', stopOpacity: 0 }}
+        style={{ stopColor: '#faff00', stopOpacity: 0 }}
       />
     </radialGradient>
     <linearGradient id="LG1" gradientUnits="userSpaceOnUse" x1="330" y1="420" x2="222" y2="129">
@@ -272,9 +279,60 @@ const Sun = () => (
         style={{ stopColor: '#E93E3A' }}
       />
     </linearGradient>
-    <circle fill="none" stroke="url(#RG1)" strokeWidth="230" strokeMiterlimit="10" strokeDasharray="44.9481,23.4956,12.2586,44.9481,23.4956,12.2586" cx="270" cy="270" r="150" />
-    <circle fill="none" stroke="url(#RG2)" strokeWidth="230" strokeMiterlimit="10" strokeDasharray="44.9481,23.4956,12.2586,44.9481,23.4956,12.2586" cx="270" cy="270" r="150" />
-    <circle id="Sun_2_" fill="url(#LG1)" cx="270" cy="270" r="150" />
+    <circle
+      fill="none"
+      stroke="url(#RG1)"
+      strokeWidth="230"
+      strokeMiterlimit="10"
+      strokeDasharray="44.9481,23.4956,12.2586,44.9481,23.4956,12.2586"
+      cx="270"
+      cy="270"
+      r="150">
+      <animateTransform
+        attributeType="xml"
+        attributeName="transform"
+        type="rotate"
+        from="0 270 270"
+        to="360 270 270"
+        dur="40s"
+        repeatCount="indefinite"
+      />
+    </circle>
+    <circle
+      fill="none"
+      stroke="url(#RG2)"
+      strokeWidth="230"
+      strokeMiterlimit="10"
+      strokeDasharray="44.9481,23.4956,12.2586,44.9481,23.4956,12.2586"
+      cx="270"
+      cy="270"
+      r="150">
+      <animateTransform
+        attributeType="xml"
+        attributeName="transform"
+        type="rotate"
+        from="0 270 270"
+        to="-360 270 270"
+        dur="40s"
+        repeatCount="indefinite"
+      />
+    </circle>
+    <circle
+      id="Sun_2_"
+      fill="url(#LG1)"
+      cx="270"
+      cy="270"
+      r="150">
+      <animateTransform
+        attributeType="xml"
+        attributeName="transform"
+        type="rotate"
+        from="0 270 270"
+        to="360 270 270"
+        dur="8s"
+        repeatCount="indefinite"
+      />
+    </circle>
   </svg>
 );
 
@@ -324,6 +382,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         <Rotate delay={500}><Star2 /></Rotate>
         <Rotate delay={1000}><Star3 /></Rotate>
         <Rotate delay={1500}><Star4 /></Rotate>
+        <Hero />
         <TBD><Sun /></TBD>
       </div>
     );
