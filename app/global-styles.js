@@ -41,6 +41,7 @@ injectGlobal`
 
   #hero-svg {
     width: 60vw;
+    opacity: 0;
   }
 
   #hero {
