@@ -6,13 +6,16 @@ injectGlobal`
   body {
     height: 100%;
     width: 100%;
+    min-height: 400px;
+    min-width: 400px;
   }
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: linear-gradient( 0deg, #0b3f93, black );
+    background: linear-gradient( 0deg, #022c70, black );
     color: grey;
     min-width: 400px;
+    display: flex;
   }
 
   body.fontLoaded {
@@ -27,12 +30,21 @@ injectGlobal`
   #Sun {
     width: 400px;
     position: absolute;
+    z-index: 0;
     // bottom: -200px;
 
     bottom: 0;  /* position the top  edge of the element at the middle of the parent */
     left: 50%; /* position the left edge of the element at the middle of the parent */
 
     transform: translate(-50%, 35%);
+  }
+
+  #hero-svg {
+    width: 60vw;
+  }
+
+  #hero {
+    position: relative;
   }
 
   @media (min-width: 480px) {
