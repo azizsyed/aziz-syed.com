@@ -86,13 +86,6 @@ const Polygon = styled.polygon`
   animation: ${animateFill} 15s ease-in-out infinite;
 `;
 
-// Create an <Input> component that'll render an <input> tag with some styles
-const TBD = styled.div`
-  // position: absolute;
-  // width: 100%;
-  // text-align: center;
-`;
-
 class Star1 extends React.PureComponent {
   componentDidMount() {
     anime({
@@ -160,6 +153,15 @@ const Star4 = () => (
        points="61.163,71.857 38.205,59.752 15.219,71.802 19.637,46.228 1.074,28.09 26.761,24.39 38.275,1.13 49.733,24.416 75.411,28.178 56.806,46.271" />
   </svg>
 );
+
+// Create an <Input> component that'll render an <input> tag with some styles
+const SunWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  // height: 0;
+  // overflow: hidden;
+`;
 
 const Sun = () => (
   <svg
@@ -314,7 +316,7 @@ const Sun = () => (
         type="rotate"
         from="0 270 270"
         to="-360 270 270"
-        dur="40s"
+        dur="30s"
         repeatCount="indefinite"
       />
     </circle>
@@ -339,7 +341,7 @@ const Sun = () => (
 
 // Create an <Input> component that'll render an <input> tag with some styles
 const Path = styled.path`
-  stroke: #d1d1d1;
+  stroke: #cfcfcf;
   strokeMiterlimit: 10;
 `;
 
@@ -354,8 +356,8 @@ class HeroSVG extends React.PureComponent {
       strokeDashoffset: [anime.setDashoffset, 0],
       // fill: () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)}`,
       easing: 'easeInOutSine',
-      duration: 1200,
-      delay: (el, i) => (i * 400) + 1000,
+      duration: 1800,
+      delay: (el, i) => (i * 500) + 1500,
       // direction: 'alternate',
       // loop: true,
     });
@@ -381,8 +383,8 @@ class HeroSVG extends React.PureComponent {
         >
           <defs>
             <linearGradient id="skyGradient" x1="50%" y1="0%" x2="50%" y2="100%" >
-              <stop offset="0%" stopColor="#393939" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#e4e4e4" stopOpacity="0.9" />
+              <stop offset="0%" stopColor="#000" stopOpacity="0.7" />
+              <stop offset="100%" stopColor="#022c70" stopOpacity="0.9" />
             </linearGradient>
           </defs>
           <Path fill="url(#skyGradient)" d="M15.822,21.418v10.547h-3.428v9.521H0.5v-25.43 c0-4.922,1.343-8.745,4.028-11.47C7.213,1.862,10.988,0.5,15.852,0.5c4.688,0,8.154,1.235,10.4,3.706 c2.246,2.471,3.369,6.284,3.369,11.44v25.84H17.727V16.438c0-1.562-0.186-2.646-0.557-3.252c-0.371-0.605-1.036-0.908-1.992-0.908 c-1.856,0-2.783,1.387-2.783,4.16v4.98H15.822z" />
@@ -461,7 +463,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
           <Rotate delay={1000}><Star3 /></Rotate>
           <Rotate delay={1500}><Star4 /></Rotate>
         </Stars>
-        <TBD><Sun /></TBD>
+        <SunWrapper><Sun /></SunWrapper>
         <Hero />
       </Home>
     );
