@@ -1175,6 +1175,13 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
+bloomer@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/bloomer/-/bloomer-0.6.2.tgz#1c65c6f0b07c16e9a3c9d1936783118c1d6c88e3"
+  dependencies:
+    classnames "^2.2.5"
+    tslib "^1.7.0"
+
 bluebird@^3.4.6:
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.4.6.tgz#01da8d821d87813d158967e743d5fe6c62cf8c0f"
@@ -1515,6 +1522,10 @@ clap@^1.0.9:
   resolved "https://registry.yarnpkg.com/clap/-/clap-1.1.2.tgz#316545bf22229225a2cecaa6824cd2f56a9709ed"
   dependencies:
     chalk "^1.1.3"
+
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
 clean-css@3.4.x:
   version "3.4.22"
@@ -6192,9 +6203,9 @@ react-side-effect@1.0.2:
   dependencies:
     fbjs "0.1.0-alpha.10"
 
-react-styled-flexboxgrid@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-styled-flexboxgrid/-/react-styled-flexboxgrid-1.0.2.tgz#61b2ed2240212753280746fdfd957654925b99f1"
+react-styled-flexboxgrid@1.*:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-styled-flexboxgrid/-/react-styled-flexboxgrid-1.1.2.tgz#3b0b45b1a8821f35f80ea2a7ee70d44b863b2c15"
 
 react-transform-catch-errors@^1.0.2:
   version "1.0.2"
@@ -7003,6 +7014,10 @@ style-loader@0.13.1:
   dependencies:
     loader-utils "^0.2.7"
 
+styled-components-breakpoint@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-1.0.1.tgz#51fb474d9449e228b6f3f2cd232631ec65c149bc"
+
 styled-components@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-1.1.2.tgz#d9931dc887322ea9b61e7a4fbda25ebd69240854"
@@ -7253,6 +7268,10 @@ trim-repeated@^1.0.0:
 tryit@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tryit/-/tryit-1.0.3.tgz#393be730a9446fd1ead6da59a014308f36c289cb"
+
+tslib@^1.7.0:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
 
 tty-browserify@0.0.0:
   version "0.0.0"
